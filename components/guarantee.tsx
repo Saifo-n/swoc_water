@@ -12,15 +12,14 @@ const Guarantee = () => {
     const { fontSize } = useFontSize();
 
     const [documents, setDocuments] = useState([]);
-    const [loading, setLoading] = useState(true); // สถานะการโหลด
+    const [loading, setLoading] = useState(true);
     const itemsPerPage = 4;
     const [currentPage, setCurrentPage] = useState(1);
 
     useEffect(() => {
         const fetchDocuments = async () => {
-            setLoading(true); // เริ่มโหลดข้อมูล
+            setLoading(true);
             try {
-                // สมมติว่าเราดึงข้อมูลจาก API
                 const doc = [
                     {
                         id: 1,
@@ -28,17 +27,16 @@ const Guarantee = () => {
                         thumbnailUrl: "https://wmsw.rid.go.th/sbe/media/img_section/20y.png",
                         linkUrl: "/pdfs/10.pdf",
                     },
-                    // More documents can be added here
                 ];
-                setDocuments(doc); // อัพเดทเอกสาร
+                setDocuments(doc);
             } catch (error) {
                 console.error("Failed to fetch documents:", error);
             } finally {
-                setLoading(false); // การโหลดเสร็จสิ้น
+                setLoading(false);
             }
         };
 
-        fetchDocuments(); // เรียกใช้ฟังก์ชันดึงข้อมูลเอกสาร
+        fetchDocuments();
     }, [language]);
 
     const handlePageChange = (page) => {

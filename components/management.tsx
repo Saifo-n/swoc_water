@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useTheme } from "../contexts/ThemeContext";
@@ -35,7 +37,6 @@ const Management = () => {
 
   return (
     <div className={isDarkMode ? "bg-gray-900/90 text-white" : "bg-white text-black"}>
-      {/* Header Section */}
       <div
         className="relative h-[250px] bg-cover bg-center"
         style={{ backgroundImage: "url('https://blog.carro.co/wp-content/uploads/2022/05/10-Dam-In-Thailand-4.jpg')" }}
@@ -50,7 +51,6 @@ const Management = () => {
         </div>
       </div>
 
-      {/* Navigation Breadcrumb */}
       <div className="text-left mt-1 px-6 py-8">
         <div className="mb-6">
           <nav className="text-lg">
@@ -70,7 +70,6 @@ const Management = () => {
           </nav>
         </div>
 
-        {/* Organization Chart Section */}
         <div className="flex justify-center mt-6 mb-12">
           <div className="w-full max-w-[1000px]">
             <TransformWrapper

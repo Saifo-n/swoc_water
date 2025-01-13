@@ -1,18 +1,21 @@
-"use client";
+'use client';
+
+import dynamic from 'next/dynamic';
 import { usePage } from '@/contexts/PageContext';
-import DivisionPage from '@/components/division';
-import KnowledgePage from '@/components/knowledge';
-import Contact from '@/components/contact';
-import Structure from '@/components/structure';
-import Management from '@/components/management';
-import Law from '@/components/law';
-import Rasponsibility from '@/components/responsibility';
-import Website from '@/components/website';
-import Knowledge_Videos from '@/components/knowledge_videos';
-import Strategic from '@/components/strategic'
-import Guarantee from '@/components/guarantee'
-import Internal from '@/components/internal';
-import External from '@/components/external';
+
+const DivisionPage = dynamic(() => import('@/components/division'), { ssr: false });
+const KnowledgePage = dynamic(() => import('@/components/knowledge'), { ssr: false });
+const Contact = dynamic(() => import('@/components/contact'), { ssr: false });
+const Structure = dynamic(() => import('@/components/structure'), { ssr: false });
+const Management = dynamic(() => import('@/components/management'), { ssr: false });
+const Law = dynamic(() => import('@/components/law'), { ssr: false });
+const Rasponsibility = dynamic(() => import('@/components/responsibility'), { ssr: false });
+const Website = dynamic(() => import('@/components/website'), { ssr: false });
+const Knowledge_Videos = dynamic(() => import('@/components/knowledge_videos'), { ssr: false });
+const Strategic = dynamic(() => import('@/components/strategic'), { ssr: false });
+const Guarantee = dynamic(() => import('@/components/guarantee'), { ssr: false });
+const Internal = dynamic(() => import('@/components/internal'), { ssr: false });
+const External = dynamic(() => import('@/components/external'), { ssr: false });
 
 function MainContent() {
   const { currentPage } = usePage();

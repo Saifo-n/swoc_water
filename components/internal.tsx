@@ -124,7 +124,7 @@ const DropdownMenu: React.FC = () => {
                         className="text-4xl font-bold mb-4"
                         style={{ fontSize: `calc(1rem + ${fontSize}px)` }}
                     >
-                        {language === "ไทย" ? "หน่วยงานภายนอก" : "Internal Department"}
+                        {language === "ไทย" ? "หน่วยงานภายใน" : "Internal Department"}
                     </h1>
                 </div>
             </div>

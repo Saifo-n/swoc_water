@@ -72,6 +72,7 @@ const Header: React.FC = () => {
         { title: "กฎหมาย ระเบียบ หรือข้อบังคับที่เกี่ยวข้องกับหน่วยงาน", url: "law", th: "กฎหมาย ระเบียบ หรือข้อบังคับที่เกี่ยวข้องกับหน่วยงาน", en: "Laws, Regulations, or Rules Related to the Organization" },
         { title: "หน้าที่ความรับผิดชอบ", url: "responsibility", th: "หน้าที่ความรับผิดชอบ", en: "Responsibilities" },
       ]
+
     },
     {
       title: "ยุทธศาสตร์",
@@ -79,7 +80,7 @@ const Header: React.FC = () => {
       en: "Strategy",
       dropdown: [
         { title: "ยุทธศาสตร์", url: "strategic", th: "ยุทธศาสตร์", en: "Strategy" },
-        { title: "เอกสารแผนยุทธศาสตร์ สำนักบริหารจัดการน้ำและอุทกวิทยา 20 ปี", url: "guarantee", th: "เอกสารแผนยุทธศาสตร์ สำนักบริหารจัดการน้ำและอุทกวิทยา 20 ปี", en: "Strategic Plan of the Water Resources and Hydrology Management Bureau: 20-Year Plan" },
+        { title: "เอกสารแผนยุทธศาสตร์ สำนักบริหารจัดการน้ำและอุทกวิทยา 20 ปี", url: "guarantee", th: "เอกสารแผนยุทธศาสตร์ สำนักบริหารจัดการน้ำและอุทกวิทยา 20 ปี", en: "Strategic Plan Document of the Office of Water Management and Hydrology for 20 Years" },
       ],
     },
     { title: "คลังความรู้", url: "knowledge", th: "คลังความรู้", en: "Knowledge Repository" },
@@ -89,8 +90,8 @@ const Header: React.FC = () => {
       th: "หน่วยงานที่เกี่ยวข้อง",
       en: "Related Organizations",
       dropdown: [
-        { title: "หน่วยงานภายใน", url: "internal", th: "หน่วยงานภายใน", en: "Internal Department" },
-        { title: "หน่วยงานภายในนอก", url: "external", th: "หน่วยงานภายนอก", en: "External Department" },
+        { title: "หน่วยงานภายใน", url: "internal", th: "หน่วยงานภายใน", en: "Department of Water Resources" },
+        { title: "หน่วยงานภายนอก", url: "external", th: "หน่วยงานภายนอก", en: "External Department" },
       ],
     },
     { title: "ติดต่อเรา", url: "contact", th: "ติดต่อเรา", en: "Contact Us" },
@@ -101,8 +102,11 @@ const Header: React.FC = () => {
   return (
     <div style={{ fontSize: `${fontSize}px` }}>
       <div className="w-full h-8 bg-[#143556] flex items-center justify-end gap-4 px-4">
-        <button onClick={toggleLanguage} className="text-white font-medium hover:underline">
-          <Image
+        <button
+          onClick={toggleLanguage}
+          className="text-white font-medium hover:underline"
+        >
+          <img
             src="/images/internet-write.png"
             alt="Change Language"
             width={20}
@@ -111,11 +115,58 @@ const Header: React.FC = () => {
           />
           {language}
         </button>
+
+        <div className="relative inline-block">
+          <button
+            onClick={toggleFontSizeOptions}
+            className="text-white flex items-center justify-center rounded-md w-10 h-10"
+          >
+            <img
+              src="/images/font-size.png"
+              alt="Adjust Font Size"
+              width={20}
+              height={20}
+            />
+          </button>
+
+          {openFontSizeOptions && (
+            <div
+              className="absolute right-0 mt-2 shadow-md rounded-lg p-2 flex items-center justify-between border border-gray-300"
+              style={{ backgroundColor: "#ffffff", opacity: 1, zIndex: 9999 }}
+            >
+              <button
+                onClick={decreaseFontSize}
+                className={`font-size-button ${decreaseDisabled ? "bg-gray-400 cursor-not-allowed" : ""}`}
+                disabled={decreaseDisabled}
+              >
+                <img
+                  src="/images/text-delete.png"
+                  alt="Decrease Font Size"
+                  width={20}
+                  height={20}
+                />
+              </button>
+              <button
+                onClick={increaseFontSize}
+                className={`font-size-button ${increaseDisabled ? "bg-gray-400 cursor-not-allowed" : ""}`}
+                disabled={increaseDisabled}
+              >
+                <img
+                  src="/images/text-plus.png"
+                  alt="Increase Font Size"
+                  width={20}
+                  height={20}
+                />
+              </button>
+            </div>
+          )}
+        </div>
+
         <button
           onClick={toggleDarkMode}
           className={`text-white font-medium hover:underline ${isDarkMode ? "text-white" : "text-blue-900"}`}
         >
-          <Image
+          <img
             src={isDarkMode ? "/images/off-night.png" : "/images/off-sun.png"}
             alt="Toggle Dark Mode"
             width={40}
@@ -125,76 +176,71 @@ const Header: React.FC = () => {
         </button>
       </div>
 
-      <header className={`shadow-md ${isDarkMode ? "bg-gray-800" : "bg-white"}`}>
+      <header className={`shadow-md ${isDarkMode ? "bg-gray-800" : "bg-white"}`} onMouseEnter={() => handleMouseEnter(0)} onMouseLeave={handleMouseLeave}>
         <div className="flex items-center justify-between p-4 font-bold">
           <div className="flex items-center font-bold">
-            <Image src="/images/logo.png" alt="Logo" width={40} height={40} />
+            <img src="/images/logo.png" alt="Logo" width={40} height={40} />
             <span className={`ml-2 font-bold ${isDarkMode ? "text-white" : "text-blue-900"}`}>
-              {language === "ไทย" ? "ส่วนประมวลวิเคราะห์สถานการณ์น้ำ" : "Water Situation Analysis Unit"}
+              ส่วนประมวลวิเคราะห์สถานการณ์น้ำ
             </span>
           </div>
+
           <nav className={`hidden lg:flex items-center space-x-8 font-bold ${isDarkMode ? "text-white" : "text-blue-900"}`}>
-          {menuItems.map((item, index) => (
-  <div
-    key={index}
-    className="relative"
-    onMouseEnter={() => handleMouseEnter(index)}
-    onMouseLeave={handleMouseLeave}
-  >
-    {item.url ? (
-      <Link
-        href={item.url}
-        onClick={(e) => {
-          e.preventDefault();
-          handleNavigation(item.url || "#", index);
-        }}
-        className={`nav-link ${selectedIndex === index ? "text-gray-800" : (isDarkMode ? "text-gray-300" : "text-blue-900")} font-bold flex items-center transition-all duration-300 transform hover:text-gray-800 hover:scale-105`}
-        style={{ fontSize: `${fontSize}px` }}
-      >
-        {language === "ไทย" ? item.th : item.en}
-      </Link>
-    ) : (
-      <span
-        className={`nav-link cursor-default ${isDarkMode ? "text-gray-300" : "text-blue-900"} font-bold flex items-center`}
-        style={{ fontSize: `${fontSize}px` }}
-      >
-        {language === "ไทย" ? item.th : item.en}
-        {item.dropdown && (
-          <span className="ml-2">
-            {openIndex === index ? "⮝" : "⮟"}
-          </span>
-        )}
-      </span>
-    )}
+            {menuItems.map((item, index) => (
+              <div
+                key={index}
+                className="relative"
+                onMouseEnter={() => handleMouseEnter(index)}
+                onMouseLeave={handleMouseLeave}
+              >
+                {item.url && item.url.startsWith("http") ? (
+                  <a
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`nav-link font-bold${selectedIndex === index ? "text-gray-800" : (isDarkMode ? "text-gray-300" : "text-blue-900")} font-bold flex items-center transition-all duration-300 transform hover:text-gray-800 hover:scale-105`}
+                    style={{ fontSize: `${fontSize}px` }}
+                  >
+                    {language === "ไทย" ? item.th : item.en}
+                  </a>
+                ) : (
+                  <Link
+                    href={item.url || "#"}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNavigation(item.url || "#", index);
+                    }}
+                    className={`nav-link ${selectedIndex === index ? "text-gray-800" : (isDarkMode ? "text-gray-300" : "text-blue-900")} font-bold flex items-center transition-all duration-300 transform hover:text-gray-800 hover:scale-105`}
+                    style={{ fontSize: `${fontSize}px` }}
+                  >
+                    {language === "ไทย" ? item.th : item.en}
+                    {item.dropdown && (
+                      <span className="ml-2">
+                        {openIndex === index ? "⮝" : "⮟"}
+                      </span>
+                    )}
+                  </Link>
+                )}
 
-    {item.dropdown && openIndex === index && (
-      <div
-        className={`absolute left-0 shadow-lg p-2 mt-2 rounded-md z-10 w-80 font-bold ${
-          isDarkMode ? "bg-gray-800 text-white" : "bg-white text-black"
-        }`}
-      >
-        {item.dropdown.map((dropdownItem, idx) => (
-          <Link
-            key={idx}
-            href={dropdownItem.url || "#"}
-            className={`block px-4 py-2 text-sm font-bold ${
-              isDarkMode ? "text-white" : "text-blue-900"
-            } ${
-              isDarkMode ? "hover:bg-black" : "hover:bg-gray-300"
-            } transition-colors duration-200`}
-            onClick={(e) => {
-              e.preventDefault();
-              handleNavigation(dropdownItem.url || "#", index);
-            }}
-          >
-            {language === "ไทย" ? dropdownItem.th : dropdownItem.en}
-          </Link>
-        ))}
-      </div>
-    )}
-  </div>
-))}
-
+                {item.dropdown && openIndex === index && (
+                  <div className={`absolute left-0 shadow-lg p-2 mt-2 rounded-md z-10 w-80 font-bold ${isDarkMode ? "bg-gray-800 text-white" : "bg-white text-black"}`}>
+                    {item.dropdown.map((dropdownItem, idx) => (
+                      <Link
+                        key={idx}
+                        href={dropdownItem.url || "#"}
+                        className={`block px-4 py-2 text-sm font-bold ${isDarkMode ? "text-white" : "text-blue-900"} ${isDarkMode ? "hover:bg-black" : "hover:bg-gray-300"} transition-colors duration-200`}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          handleNavigation(dropdownItem.url || "#", index);
+                        }}
+                      >
+                        {language === "ไทย" ? dropdownItem.th : dropdownItem.en}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
           </nav>
 
           <button
@@ -206,46 +252,55 @@ const Header: React.FC = () => {
         </div>
 
         {menuOpen && (
-          <nav className={`font-bold ${isDarkMode ? "bg-gray-800 text-white" : "bg-white text-blue-900"}`}>
-            {menuItems.map((item, index) => (
-              <div key={index} className="border-b">
-                <button
-                  onClick={() => {
-                    if (!item.dropdown) {
-                      handleNavigation(item.url || "#", index);
-                      setMenuOpen(false);
-                    } else {
-                      toggleDropdown(index);
-                    }
-                  }}
-                  className={`block w-full py-3 text-left px-4 font-medium font-bold ${isDarkMode ? "text-white" : "text-blue-900"}`}
-                >
-                  {language === "ไทย" ? item.th : item.en}
-                  {item.dropdown && (
-                    <span className="ml-2">
-                      {dropdownOpen === index ? "⮝" : "⮟"}
-                    </span>
-                  )}
-                </button>
+  <nav className={`font-bold ${isDarkMode ? "bg-gray-800 text-white" : "bg-white text-blue-900"}`}>
+    {menuItems.map((item, index) => (
+      <div key={index} className="border-b">
+        <button
+          onClick={() => {
+            if (!item.dropdown) {
+              if (item.url === "https://water.rid.go.th/hydhome/ma/book-hyd68.html" || item.url === "https://www.facebook.com/Kromchon") {
+                window.open(item.url, "_blank");
+              } else {
+                handleNavigation(item.url || "#", index);
+              }
+              setMenuOpen(false);
+            } else {
+              toggleDropdown(index);
+            }
+          }}
+          className={`block w-full py-3 text-left px-4 font-medium font-bold ${isDarkMode ? "text-white" : "text-blue-900"}`}
+        >
+          {language === "ไทย" ? item.th : item.en}
+          {item.dropdown && (
+            <span className="ml-2">
+              {dropdownOpen === index ? "⮝" : "⮟"}
+            </span>
+          )}
+        </button>
 
-                {item.dropdown && dropdownOpen === index && (
-                  <div className={`pl-8 font-bold ${isDarkMode ? "bg-gray-800 text-white" : "bg-white text-blue-900"}`}>
-                    {item.dropdown.map((dropdownItem, idx) => (
-                      <Link
-                        key={idx}
-                        href={dropdownItem.url || "#"}
-                        className={`block px-4 py-2 text-sm font-bold ${isDarkMode ? "text-white hover:bg-gray-700" : "text-blue-900 hover:bg-gray-200"}`}
-                      >
-                        {language === "ไทย" ? dropdownItem.th : dropdownItem.en}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-
-              </div>
+        {item.dropdown && dropdownOpen === index && (
+          <div className={`pl-8 font-bold ${isDarkMode ? "bg-gray-800 text-white" : "bg-white text-blue-900"}`}>
+            {item.dropdown.map((dropdownItem, idx) => (
+              <Link
+                key={idx}
+                href={dropdownItem.url || "#"}
+                className={`block px-4 py-2 text-sm font-bold ${isDarkMode ? "text-white hover:bg-gray-700" : "text-blue-900 hover:bg-gray-200"}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavigation(dropdownItem.url || "#", index);
+                  setMenuOpen(false);
+                }}
+              >
+                {language === "ไทย" ? dropdownItem.th : dropdownItem.en}
+              </Link>
             ))}
-          </nav>
+          </div>
         )}
+      </div>
+    ))}
+  </nav>
+)}
+
       </header>
     </div>
   );

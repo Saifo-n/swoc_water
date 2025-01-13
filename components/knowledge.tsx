@@ -44,21 +44,19 @@ const KnowledgePage = () => {
             </div>
             <div className="max-w-6xl mx-auto mt-8 py-4 px-4 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
                 <button
-                    className={`button ${
-                        activeTab === "documents"
+                    className={`button ${activeTab === "documents"
                             ? "bg-blue-500 text-white shadow-lg transform scale-105 w-full sm:w-60"
                             : "bg-gray-200 text-black hover:bg-blue-100 hover:scale-105 w-full sm:w-60"
-                    }`}
+                        }`}
                     onClick={() => handleTabChange("documents")}
                 >
                     {language === "ไทย" ? "เอกสาร" : "Documents"}
                 </button>
                 <button
-                    className={`button ${
-                        activeTab === "videos"
+                    className={`button ${activeTab === "videos"
                             ? "bg-blue-500 text-white shadow-lg transform scale-105 w-full sm:w-60"
                             : "bg-gray-200 text-black hover:bg-blue-100 hover:scale-105 w-full sm:w-60"
-                    }`}
+                        }`}
                     onClick={() => handleTabChange("videos")}
                 >
                     {language === "ไทย" ? "วิดีโอ" : "Videos"}
@@ -165,9 +163,8 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPage
                 <button
                     key={index}
                     onClick={() => onPageChange(index + 1)}
-                    className={`px-3 py-1 rounded ${
-                        currentPage === index + 1 ? "bg-blue-500 text-white" : "bg-gray-200 hover:bg-gray-400"
-                    }`}
+                    className={`px-3 py-1 rounded ${currentPage === index + 1 ? "bg-blue-500 text-white" : "bg-gray-200 hover:bg-gray-400"
+                        }`}
                 >
                     {index + 1}
                 </button>
@@ -283,7 +280,7 @@ const videos = [
         date: "5 มิ.ย. 2022 / SWOC NEWs",
         department: "ประหยัดน้ำ (Save Water) - ว่าน ธนกฤต X เปา เปาวลี",
         linkUrl: "https://www.youtube.com/watch?v=ewnsShCZs10",
-        thumbnailUrl: "/images/video01.png",  // เพิ่มภาพ thumbnail ของวิดีโอ
+        thumbnailUrl: "/images/video01.png",
     },
     {
         id: 2,
@@ -291,7 +288,7 @@ const videos = [
         date: "5 พ.ค. 2020 / SWOC NEWs",
         department: "รวมพลังประหยัดน้ำ สู้ภัยแล้ง",
         linkUrl: "https://www.youtube.com/watch?v=A2m8_Q2wWF0",
-        thumbnailUrl: "/images/video02.png",  // เพิ่มภาพ thumbnail ของวิดีโอ
+        thumbnailUrl: "/images/video02.png",
     },
     {
         id: 3,
@@ -299,7 +296,7 @@ const videos = [
         date: "30 พ.ย. 2021 / SWOC NEWs",
         department: "SWOC “นวัตกรรม สายน้ำ” แก้ไขปัญหา นำพาสุข",
         linkUrl: "https://www.youtube.com/watch?v=dXOmweRLSAQ",
-        thumbnailUrl: "/images/video03.png",  // เพิ่มภาพ thumbnail ของวิดีโอ
+        thumbnailUrl: "/images/video03.png",
     },
     {
         id: 4,
@@ -307,7 +304,7 @@ const videos = [
         date: "30 พ.ย. 2021 / SWOC NEWs",
         department: "เรื่องเล่าจากสายน้ำ กว่าจะเป็น SWOC",
         linkUrl: "https://www.youtube.com/watch?v=_w2NdLmeFJg",
-        thumbnailUrl: "/images/video04.png",  // เพิ่มภาพ thumbnail ของวิดีโอ
+        thumbnailUrl: "/images/video04.png",
     },
     {
         id: 5,
@@ -315,7 +312,7 @@ const videos = [
         date: "30 พ.ย. 2021 / SWOC NEWs",
         department: "ความเป็นมา ตึก SWOC",
         linkUrl: "https://www.youtube.com/watch?v=2R-XXbgGrTc",
-        thumbnailUrl: "/images/video05.png",  // เพิ่มภาพ thumbnail ของวิดีโอ
+        thumbnailUrl: "/images/video05.png",
     },
     {
         id: 6,
@@ -323,6 +320,6 @@ const videos = [
         date: "27 พ.ค. 2021 / SWOC NEWs",
         department: "ศูนย์ปฏิบัติการน้ำอัจฉริยะ (2564)",
         linkUrl: "https://www.youtube.com/watch?v=63CEU_vkk6o",
-        thumbnailUrl: "/images/video06.png",  // เพิ่มภาพ thumbnail ของวิดีโอ
+        thumbnailUrl: "/images/video06.png",
     },
 ];

@@ -7,12 +7,12 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 
 
-const leafletIcon = L.Icon.Default as any;  // ใช้ 'any' เพื่อข้ามข้อผิดพลาด
+const leafletIcon = L.Icon.Default as any;
 delete leafletIcon.prototype._getIconUrl;
 
 L.Icon.Default.mergeOptions({
-  iconRetinaUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png",
-  iconUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png",
+    iconRetinaUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png",
+    iconUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png",
 });
 
 const Contact = () => {
@@ -20,11 +20,10 @@ const Contact = () => {
     const { language } = useLanguage();
     const { fontSize } = useFontSize();
 
-    const companyPosition = [13.7885101, 100.5107503]; // ตำแหน่งบริษัท
+    const companyPosition = [13.7885101, 100.5107503];
 
     return (
         <div className={isDarkMode ? "bg-gray-900/90 text-white" : "bg-white text-black"}>
-            {/* Header Section */}
             <div
                 className="relative h-[300px] bg-cover bg-center"
                 style={{
@@ -129,18 +128,18 @@ const Contact = () => {
                             {language === "ไทย" ? "แผนที่ตั้ง" : "Location Map"}
                         </h3>
                         <div className="mt-1 w-full sm:w-full md:max-w-4xl mx-auto text-center">
-    <iframe
-        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d242.1774844886564!2d100.510758!3d13.788532000000002!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29be6e636de21%3A0xe8a9f978893b1005!2z4Lio4Li54LiZ4Lii4LmM4Lib4LiP4Li04Lia4Lix4LiV4Li04LiB4Liy4Lij4LiZ4LmJ4Liz4Lit4Lix4LiI4LiJ4Lij4Li04Lii4Liw!5e0!3m2!1sth!2sth!4v1736476575129!5m2!1sth!2sth"
-        width="120%"   
-        height="400"
-        style={{ border: 0 }}
-        allowFullScreen
-        loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade"
-        title="Google Maps Location"
-        className="rounded-lg shadow-md"
-    ></iframe>
-</div>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d242.1774844886564!2d100.510758!3d13.788532000000002!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29be6e636de21%3A0xe8a9f978893b1005!2z4Lio4Li54LiZ4Lii4LmM4Lib4LiP4Li04Lia4Lix4LiV4Li04LiB4Liy4Lij4LiZ4LmJ4Liz4Lit4Lix4LiI4LiJ4Lij4Li04Lii4Liw!5e0!3m2!1sth!2sth!4v1736476575129!5m2!1sth!2sth"
+                                width="120%"
+                                height="400"
+                                style={{ border: 0 }}
+                                allowFullScreen
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                                title="Google Maps Location"
+                                className="rounded-lg shadow-md"
+                            ></iframe>
+                        </div>
 
                     </div>
                 </div>

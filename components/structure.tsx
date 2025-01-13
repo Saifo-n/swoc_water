@@ -150,7 +150,6 @@ const Structure: React.FC = () => {
                     </nav>
                 </div>
 
-                {/* Organization Chart */}
                 <div className="flex justify-center mt-6">
                     <img
                         src="/images/org_chart.png"
@@ -159,7 +158,6 @@ const Structure: React.FC = () => {
                     />
                 </div>
 
-                {/* Charts Section */}
                 <div className="summary-charts mt-8">
                     <h2 className="text-center text-xl font-bold mb-6">
                         {language === "ไทย" ? "แผนภูมิสรุปจำนวนเจ้าหน้าที่" : "Summary of Staff Charts"}
@@ -171,7 +169,6 @@ const Structure: React.FC = () => {
                             overflowX: 'hidden',
                         }}
                     >
-                        {/* Pie Chart */}
                         <div className="text-center chart-wrapper">
                             <h3 className={`mb-4 text-lg font-semibold ${isDarkMode ? 'text-white' : 'text-black'}`}>
                                 {language === "ไทย" ? "แผนภูมิแสดงจำนวนบุคลากร" : "Personnel Distribution Chart"}
@@ -187,7 +184,6 @@ const Structure: React.FC = () => {
                             </div>
                         </div>
 
-                        {/* Bar Chart: Titles */}
                         <div className="text-center chart-wrapper">
                             <h3 className={`mb-4 text-lg font-semibold ${isDarkMode ? 'text-white' : 'text-black'}`}>
                                 {language === "ไทย" ? "แผนภูมิแสดงจำนวนบุคลากรในแต่ละตำแหน่ง" : "Staff by Position Chart"}
@@ -195,7 +191,6 @@ const Structure: React.FC = () => {
                             <Bar data={titlesData} options={{ indexAxis: 'y' }} />
                         </div>
 
-                        {/* Bar Chart: Ages */}
                         <div className="text-center chart-wrapper">
                             <h3 className="mb-4 text-lg font-semibold">
                                 {language === "ไทย" ? "แผนภูมิแสดงบุคลากรตามอายุ" : "Staff by Age Chart"}
@@ -203,7 +198,6 @@ const Structure: React.FC = () => {
                             <Bar data={titlesData} options={titlesOptions} />
                         </div>
 
-                        {/* Bar Chart: Categories */}
                         <div className="text-center chart-wrapper">
                             <h3 className="mb-4 text-lg font-semibold">
                                 {language === "ไทย" ? "แผนภูมิแสดงบุคลากรตามประเภทเจ้าหน้าที่" : "Staff by Category Chart"}

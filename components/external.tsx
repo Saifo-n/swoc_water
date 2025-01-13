@@ -13,7 +13,6 @@ const External = () => {
 
   const [currentPage, setCurrentPage] = useState<string>("");
 
-  // จัดการ URL ปัจจุบันเมื่อโหลดหน้า
   useEffect(() => {
     if (typeof window !== "undefined") {
       const savedUrl = sessionStorage.getItem("currentUrl");
@@ -57,7 +56,6 @@ const External = () => {
 
   return (
     <div className={isDarkMode ? "bg-gray-900/90 text-white" : "bg-white text-black"}>
-      {/* Header Section */}
       <div
         className="relative h-[250px] bg-cover bg-center"
         style={{
@@ -75,7 +73,6 @@ const External = () => {
         </div>
       </div>
 
-      {/* Navigation Section */}
       <div className="text-left mt-1 px-6 py-8">
         <div className="mb-6">
           <nav className="text-lg">
@@ -95,7 +92,6 @@ const External = () => {
           </nav>
         </div>
 
-        {/* Department Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {departments.map((department, index) => (
             <a
