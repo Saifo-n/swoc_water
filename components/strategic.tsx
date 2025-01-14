@@ -14,13 +14,13 @@ const Strategic = () => {
 
     useEffect(() => {
         if (typeof window !== "undefined") {
-          const savedUrl = sessionStorage.getItem("currentUrl");
-          if (savedUrl && window.location.pathname !== savedUrl) {
-            window.history.pushState(null, "", savedUrl);
-            setCurrentPage(savedUrl);
-          }
+            const savedUrl = sessionStorage.getItem("currentUrl");
+            if (savedUrl && window.location.pathname !== savedUrl) {
+                window.history.pushState(null, "", savedUrl);
+                setCurrentPage(savedUrl);
+            }
         }
-      }, [setCurrentPage]);
+    }, [setCurrentPage]);
 
     const handleNavigation = (url: string) => {
         if (typeof window !== "undefined" && window.location.pathname !== url) {
@@ -149,7 +149,7 @@ const Strategic = () => {
                             >
                                 {language === "ไทย" ? "พันธกิจ" : "Mission"}
                             </h3>
-                            <p>
+                            <p style={{ fontSize: `${fontSize}px`}}>
                                 {language === "ไทย"
                                     ? "พันธกิจนี้คือพันธกิจของกรมชลประทาน"
                                     : "This mission is the mission of the Royal Irrigation Department."}
@@ -163,16 +163,17 @@ const Strategic = () => {
                         <div className="mission-steps">
                             <div className="mission-step-row">
                                 <div className="mission-step">
-                                    <div className="step-number">1</div>
-                                    <p>
+                                    <div
+                                        className="step-number" style={{ fontSize: `${fontSize}px` }}>1</div>
+                                    <p style={{ fontSize: `${fontSize}px`, color: isDarkMode ? 'white' : 'black', }}>
                                         {language === "ไทย"
                                             ? "บริหารจัดการน้ำอย่างบูรณาการให้เพียงพอ ทั่วถึงและเป็นธรรม"
                                             : "Manage water resources in an integrated manner to ensure sufficiency, equity, and fairness."}
                                     </p>
                                 </div>
                                 <div className="mission-step">
-                                    <div className="step-number">2</div>
-                                    <p>
+                                    <div className="step-number"style={{ fontSize: `${fontSize}px` }}>2</div>
+                                    <p style={{ fontSize: `${fontSize}px`, color: isDarkMode ? 'white' : 'black', }}>
                                         {language === "ไทย"
                                             ? "สนับสนุนวิชาการในด้านการบริหารจัดการน้ำ และ การป้องกันและบรรเทาภัยอันเกิดจากน้ำ"
                                             : "Support academic knowledge in water management and the prevention and mitigation of water-related disasters."}
@@ -182,19 +183,18 @@ const Strategic = () => {
 
                             <div className="mission-step-row">
                                 <div className="mission-step">
-                                    <div className="step-number">3</div>
-                                    <p>
+                                    <div className="step-number" style={{ fontSize: `${fontSize}px` }}>3</div>
+                                    <p style={{ fontSize: `${fontSize}px`, color: isDarkMode ? 'white' : 'black', }}>
                                         {language === "ไทย"
                                             ? "สนับสนุนการปรับปรุงการบำรุงรักษาอาคารชลประทานให้พร้อมใช้งาน"
                                             : "Support improvements in the maintenance of irrigation infrastructure to ensure functionality."}
                                     </p>
                                 </div>
                                 <div className="mission-step">
-                                    <div className="step-number">4</div>
-                                    <p>
-                                        {language === "ไทย"
-                                            ? "พัฒนาฐานข้อมูลให้ถูกต้องและใช้นวัตกรรมและเทคโนโลยีทันสมัย"
-                                            : "Develop accurate databases and utilize innovative and modern technologies."}
+                                    <div className="step-number"style={{ fontSize: `${fontSize}px` }}>4</div>
+                                    <p style={{ fontSize: `${fontSize}px`, color: isDarkMode ? 'white' : 'black', }}>                                        {language === "ไทย"
+                                        ? "พัฒนาฐานข้อมูลให้ถูกต้องและใช้นวัตกรรมและเทคโนโลยีทันสมัย"
+                                        : "Develop accurate databases and utilize innovative and modern technologies."}
                                     </p>
                                 </div>
                             </div>
@@ -216,12 +216,12 @@ const Strategic = () => {
                             <div
                                 className={`border-2 ${isDarkMode ? 'border-gray-700' : 'border-blue-500'} p-6 rounded-lg text-lg w-96 ${isDarkMode ? 'bg-gray-900' : 'bg-blue-50'} shadow-lg hover:bg-blue-100 transition duration-300 ease-in-out transform hover:scale-105`}
                             >
-                                <h4 className={`font-semibold text-lg mb-2 ${isDarkMode ? 'text-white hover:text-black' : 'text-blue-700'}`}>
+                                <h4 className={`font-semibold text-lg mb-2 ${isDarkMode ? 'text-white hover:text-black' : 'text-blue-700'}`}style={{ fontSize: `${fontSize}px` }}>
                                     {language === "ไทย" ? "บริหารจัดการน้ำอย่างบูรณาการ" : "Integrated Water Management"}
                                 </h4>
                                 <p
                                     className={`text-base ${isDarkMode ? "text-white hover:text-black" : "text-black"}`}
-                                    style={{ fontSize: `${fontSize + 2}px` }}
+                                    style={{ fontSize: `${fontSize}px` }}
                                 >
                                     {language === "ไทย"
                                         ? "การบริหารจัดการน้ำในลักษณะบูรณาการเพื่อให้มีประสิทธิภาพและความยั่งยืน"
@@ -232,12 +232,12 @@ const Strategic = () => {
                             <div
                                 className={`border-2 ${isDarkMode ? 'border-gray-700' : 'border-green-500'} p-6 rounded-lg text-lg w-96 ${isDarkMode ? 'bg-gray-900' : 'bg-green-50'} shadow-lg hover:bg-green-100 transition duration-300 ease-in-out transform hover:scale-105`}
                             >
-                                <h4 className={`font-semibold text-lg mb-2 ${isDarkMode ? 'text-white hover:text-black' : 'text-green-700'}`}>
+                                <h4 className={`font-semibold text-lg mb-2 ${isDarkMode ? 'text-white hover:text-black' : 'text-green-700'}`}style={{ fontSize: `${fontSize}px` }}>
                                     {language === "ไทย" ? "การป้องกันและบรรเทาภัยอันเกิดจากน้ำ" : "Water-Related Hazard Prevention and Mitigation"}
                                 </h4>
                                 <p
                                     className={`text-base ${isDarkMode ? "text-white hover:text-black" : "text-black"}`}
-                                    style={{ fontSize: `${fontSize + 2}px` }}
+                                    style={{ fontSize: `${fontSize}px` }}
                                 >
                                     {language === "ไทย"
                                         ? "การป้องกันและลดผลกระทบจากภัยอันเกิดจากน้ำ"
@@ -248,12 +248,12 @@ const Strategic = () => {
                             <div
                                 className={`border-2 ${isDarkMode ? 'border-gray-700' : 'border-purple-500'} p-6 rounded-lg text-lg w-96 ${isDarkMode ? 'bg-gray-900' : 'bg-purple-50'} shadow-lg hover:bg-purple-100 transition duration-300 ease-in-out transform hover:scale-105`}
                             >
-                                <h4 className={`font-semibold text-lg mb-2 ${isDarkMode ? 'text-white hover:text-black' : 'text-purple-700'}`}>
+                                <h4 className={`font-semibold text-lg mb-2 ${isDarkMode ? 'text-white hover:text-black' : 'text-purple-700'}`}style={{ fontSize: `${fontSize}px` }}>
                                     {language === "ไทย" ? "องค์กรอัจฉริยะที่มุ่งเน้นประสิทธิภาพการบริหารจัดการน้ำ" : "Smart Organization Focused on Water Management Efficiency"}
                                 </h4>
                                 <p
                                     className={`text-base ${isDarkMode ? "text-white hover:text-black" : "text-black"}`}
-                                    style={{ fontSize: `${fontSize + 2}px` }}
+                                    style={{ fontSize: `${fontSize}px` }}
                                 >
                                     {language === "ไทย"
                                         ? "สร้างองค์กรที่มีเทคโนโลยีทันสมัยเพื่อการบริหารจัดการน้ำที่มีประสิทธิภาพ"
@@ -289,7 +289,7 @@ const Strategic = () => {
                                         ? `${isDarkMode ? "bg-gray-800 text-white" : "bg-blue-500 text-white"} shadow-lg transform scale-105 w-full sm:w-60`
                                         : `${isDarkMode ? "bg-gray-700 text-white" : "bg-gray-200 text-black"} hover:bg-blue-100 hover:scale-105 w-full sm:w-60`
                                         }`}
-                                >
+                                        style={{ fontSize: `${fontSize}px` }}>
                                     {language === "ไทย" ? `ด้านที่ ${index + 1}` : `Tab ${index + 1}`}
                                 </button>
                             ))}
@@ -297,14 +297,14 @@ const Strategic = () => {
 
                         <div
                             className={`p-6 rounded-lg shadow-md mt-4 ${isDarkMode ? "bg-gray-800" : "bg-blue-100"
-                                }`}
+                                }`} style={{ fontSize: `${fontSize}px` }}
                         >
-                            <h4 className="font-semibold text-lg mb-2 text-blue-700">
-                                {objectives[activeTab - 1].title}
+                            <h4 className="font-semibold text-lg mb-2 text-blue-700"style={{ fontSize: `${fontSize}px` }}>
+                                {objectives[activeTab - 1].title} 
                             </h4>
                             <div>
                                 {objectives[activeTab - 1].content.map((item, idx) => (
-                                    <p key={idx} className="mb-2 text-lg">
+                                    <p key={idx} className="mb-2 text-lg" style={{ fontSize: `${fontSize}px` }}>
                                         {item}
                                     </p>
                                 ))}

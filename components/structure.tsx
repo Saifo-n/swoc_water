@@ -133,7 +133,7 @@ const Structure: React.FC = () => {
             </div>
 
             <div className="text-left mt-1 px-6 py-8">
-                <div className="mb-6">
+                <div className="mb-6" >
                     <nav className="text-lg">
                         <Link
                             href="/division"

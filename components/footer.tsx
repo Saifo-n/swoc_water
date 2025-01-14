@@ -74,7 +74,7 @@ const Footer = () => {
               </a>
             </li>
             <li style={{ fontSize: `${fontSize}px` }}>
-              <a href="https://wmsw.rid.go.th/branch/" target="_blank" className="block hover:underline">
+              <a href="http://wmsdb.rid.go.th/" target="_blank" className="block hover:underline">
                 {language === "ไทย"
                   ? "• ฝ่ายประมวลและวิเคราะห์สถานการณ์น้ำ"
                   : "• Water Situation Analysis Unit"}
@@ -100,22 +100,22 @@ const Footer = () => {
         <div className="flex-1 min-w-[280px] mb-4 md:mb-0">
           <ul className="list-none mt-8">
             <li style={{ fontSize: `${fontSize}px` }}>
-              <a href="https://swocmodel.rid.go.th/" className="block hover:underline">
+              <a href="https://swocmodel.rid.go.th/" target="_blank" className="block hover:underline">
                 {language === "ไทย" ? "• SWOC MODEL" : "• SWOC MODEL"}
               </a>
             </li>
             <li style={{ fontSize: `${fontSize}px` }}>
-              <a href="https://swoc.rid.go.th/" className="block hover:underline">
+              <a href="https://swoc.rid.go.th/" target="_blank" className="block hover:underline">
                 {language === "ไทย" ? "• Swoc.rid.go.th" : "• Swoc.rid.go.th"}
               </a>
             </li>
             <li style={{ fontSize: `${fontSize}px` }}>
-              <a href="https://bigdata-swoc.rid.go.th/" className="block hover:underline">
+              <a href="https://bigdata-swoc.rid.go.th/dashboard" target="_blank" className="block hover:underline">
                 {language === "ไทย" ? "• BigData" : "• BigData"}
               </a>
             </li>
             <li style={{ fontSize: `${fontSize}px` }}>
-              <a href="https://telerid.rid.go.th/#/" className="block hover:underline">
+              <a href="https://telerid.rid.go.th/#/" target="_blank" className="block hover:underline">
                 {language === "ไทย"
                   ? "• โทรมาตรเพื่อการพยากรณ์น้ำและเตือนภัย"
                   : "• Telemetry for Water Forecasting and Warning"}
