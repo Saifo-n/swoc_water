@@ -74,7 +74,7 @@ const Footer = () => {
               </a>
             </li>
             <li style={{ fontSize: `${fontSize}px` }}>
-              <a href="http://wmsdb.rid.go.th/" target="_blank" className="block hover:underline">
+              <a href="https://wmsb.rid.go.th/" target="_blank" className="block hover:underline">
                 {language === "ไทย"
                   ? "• ฝ่ายประมวลและวิเคราะห์สถานการณ์น้ำ"
                   : "• Water Situation Analysis Unit"}
