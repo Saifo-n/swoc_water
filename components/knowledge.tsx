@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import { useTheme } from "../contexts/ThemeContext";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -30,6 +31,7 @@ const KnowledgePage = () => {
         currentPage * itemsPerPage
     );
 
+
     return (
         <div className={isDarkMode ? "bg-gray-900/90 text-white" : "bg-white text-black"}>
             <div
@@ -42,104 +44,122 @@ const KnowledgePage = () => {
                     </h1>
                 </div>
             </div>
-            <div className="max-w-6xl mx-auto mt-8 py-4 px-4 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-                <button
-                    className={`button ${activeTab === "documents"
+            <div className="text-left mt-1 px-6 py-8">
+                <div className="mb-6">
+                    <nav className="text-lg">
+                        <Link href="/division" className="text-blue-500 font-bold hover:underline">
+                            {language === "ไทย" ? "หน้าแรก" : "Home"}
+                        </Link>
+                        <span className="mx-2">/</span>
+                        <span>
+                            {language === "ไทย"
+                                ? "คลั่งความรู้"
+                                : "Knowledge Repository"}
+                        </span>
+                    </nav>
+                </div>
+
+                <div className="max-w-6xl mx-auto mt-2 py-4 px-4 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <button
+                        className={`button ${activeTab === "documents"
                             ? "bg-blue-500 text-white shadow-lg transform scale-105 w-full sm:w-60"
                             : "bg-gray-200 text-black hover:bg-blue-100 hover:scale-105 w-full sm:w-60"
-                        }`}
-                    onClick={() => handleTabChange("documents")}
-                >
-                    {language === "ไทย" ? "เอกสาร" : "Documents"}
-                </button>
-                <button
-                    className={`button ${activeTab === "videos"
+                            }`}
+                        onClick={() => handleTabChange("documents")}
+                    >
+                        {language === "ไทย" ? "เอกสาร" : "Documents"}
+                    </button>
+                    <button
+                        className={`button ${activeTab === "videos"
                             ? "bg-blue-500 text-white shadow-lg transform scale-105 w-full sm:w-60"
                             : "bg-gray-200 text-black hover:bg-blue-100 hover:scale-105 w-full sm:w-60"
-                        }`}
-                    onClick={() => handleTabChange("videos")}
-                >
-                    {language === "ไทย" ? "วิดีโอ" : "Videos"}
-                </button>
-            </div>
+                            }`}
+                        onClick={() => handleTabChange("videos")}
+                    >
+                        {language === "ไทย" ? "วิดีโอ" : "Videos"}
+                    </button>
+                </div>
 
-            <div className="max-w-6xl mx-auto py-8 px-4">
-                {activeTab === "documents" && (
-                    <div>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                            {paginatedItems.map((doc) => (
-                                <div
-                                    key={doc.id}
-                                    className="border rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow w-full sm:w-56 mx-auto"
-                                >
-                                    <a href={doc.linkUrl} target="_blank" rel="noopener noreferrer">
-                                        <div className="flex justify-center">
-                                            <img
-                                                src={doc.thumbnailUrl || "/images/default-thumbnail.png"}
-                                                alt={doc.title}
-                                                className="w-full h-32 object-contain"
-                                            />
-                                        </div>
-                                    </a>
-                                    <div className="p-4">
-                                        <h3 className="text-lg font-bold mb-1" style={{ fontSize: `calc(0.2rem + ${fontSize - 4}px)` }}>
-                                            {doc.title}
-                                        </h3>
-                                        <p className="text-sm mb-1">
-                                            {language === "ไทย" ? "วันที่" : "Date"}: {doc.date}
-                                        </p>
-                                        <p className="text-sm">{doc.department}</p>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                )}
-
-                {activeTab === "videos" && (
-                    <div>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                            {paginatedItems.map((video) => (
-                                <div
-                                    key={video.id}
-                                    className="border rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
-                                >
-                                    <iframe
-                                        src={`${video.linkUrl.replace("watch?v=", "embed/")}`}
-                                        title={video.title}
-                                        allow="autoplay; encrypted-media"
-                                        className="w-full h-56"
-                                    ></iframe>
-                                    <div className="p-4">
-                                        <h3 className="text-lg font-bold mb-2" style={{ fontSize: `calc(0.2rem + ${fontSize - 4}px)` }}>
-                                            {video.title}
-                                        </h3>
-                                        <p className="text-sm mb-1">
-                                            {language === "ไทย" ? "วันที่" : "Date"}: {video.date}
-                                        </p>
-                                        <p className="text-sm">{video.department}</p>
-                                        <a
-                                            href={video.linkUrl}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="text-blue-500 hover:underline"
-                                        >
-                                            {language === "ไทย" ? "อ่านเพิ่มเติม" : "Read More"}
+                <div className="max-w-7xl mx-auto py-8 px-4">
+                    {activeTab === "documents" && (
+                        <div>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                                {paginatedItems.map((doc) => (
+                                    <div
+                                        key={doc.id}
+                                        className="border rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow w-full sm:w-72 mx-auto"
+                                    >
+                                        <a href={doc.linkUrl} target="_blank" rel="noopener noreferrer">
+                                            <div className="flex justify-center p-2">
+                                                <img
+                                                    src={doc.thumbnailUrl || "/images/default-thumbnail.png"}
+                                                    alt={doc.title}
+                                                    className="w-full h-60 object-contain"
+                                                />
+                                            </div>
                                         </a>
+                                        <div className="p-2 flex flex-col justify-center items-center text-center">
+                                            <h3 className="text-lg font-bold mb-1" style={{ fontSize: `calc(0.2rem + ${fontSize - 4}px)` }}>
+                                                {doc.title}
+                                            </h3>
+                                            <p className="text-sm mb-1">
+                                                {language === "ไทย" ? "วันที่" : "Date"}: {doc.date}
+                                            </p>
+                                            <p className="text-sm">{doc.department}</p>
+                                        </div>
                                     </div>
-                                </div>
-                            ))}
+                                ))}
+                            </div>
                         </div>
-                    </div>
-                )}
+                    )}
 
-                <Pagination
-                    currentPage={currentPage}
-                    totalPages={totalPages}
-                    onPageChange={handlePageChange}
-                />
+                    {activeTab === "videos" && (
+                        <div>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                                {paginatedItems.map((video) => (
+                                    <div
+                                        key={video.id}
+                                        className="border rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
+                                    >
+                                        <iframe
+                                            src={`${video.linkUrl.replace("watch?v=", "embed/")}`}
+                                            title={video.title}
+                                            allow="autoplay; encrypted-media"
+                                            className="w-full h-56"
+                                        ></iframe>
+
+                                        <div className="p-4">
+                                            <h3 className="text-lg font-bold mb-2" style={{ fontSize: `calc(0.2rem + ${fontSize - 4}px)` }}>
+                                                {video.title}
+                                            </h3>
+                                            <p className="text-sm mb-1">
+                                                {language === "ไทย" ? "วันที่" : "Date"}: {video.date}
+                                            </p>
+                                            <p className="text-sm">{video.department}</p>
+                                            <a
+                                                href={video.linkUrl}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="text-blue-500 hover:underline"
+                                            >
+                                                {language === "ไทย" ? "อ่านเพิ่มเติม" : "Read More"}
+                                            </a>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    )}
+
+                    <Pagination
+                        currentPage={currentPage}
+                        totalPages={totalPages}
+                        onPageChange={handlePageChange}
+                    />
+                </div>
             </div>
         </div>
+
     );
 };
 
@@ -188,88 +208,88 @@ const documents = [
         title: "คู่มือการปฏิบัติงานส่วนอุทกวิทยา",
         date: "18 ส.ค. 2019",
         department: "ส่วนอุทกวิทยา",
-        thumbnailUrl: "/images/knowledge01.png",
-        linkUrl: "http://kmcenter.rid.go.th/kchydhome/documents/2552/manual/manual_hyd.pdf",
+        thumbnailUrl: "/knowledge/knowledge01.png",
+        linkUrl: "/knowledge/manual_hyd.pdf",
     },
     {
         id: 2,
         title: "คู่มือการคำนวณปริมาณน้ำ",
         date: "25 พ.ค. 2010",
         department: "กลุ่มงานสารสนเทศและมาตรวิทยา",
-        thumbnailUrl: "/images/knowledge02.png",
-        linkUrl: "http://kmcenter.rid.go.th/kchydhome/documents/2553/manual/calcurate-rating_curve.pdf",
+        thumbnailUrl: "/knowledge/knowledge02.png",
+        linkUrl: "/knowledge/calcurate-rating_curve.pdf",
     },
     {
         id: 3,
         title: "คู่มือการสร้างความสัมพันธ์ระดับน้ำ-ปริมาณ (Rating Curve)",
         date: "25 พ.ค. 2010",
         department: "กลุ่มงานสารสนเทศและพยากรณ์สารสนเทศ",
-        thumbnailUrl: "/images/knowledge03.png",
-        linkUrl: "http://kmcenter.rid.go.th/kchydhome/documents/2553/manual/problem-rating_curve.pdf",
+        thumbnailUrl: "/knowledge/knowledge03.png",
+        linkUrl: "/knowledge/problem-rating_curve.pdf",
     },
     {
         id: 4,
         title: "คู่มือการประเมินค่าปริมาณการไหลของน้ำ ด้วยวิธี Manning's formula",
         date: "25 พ.ค. 2010",
         department: "กลุ่มงานสารสนเทศและพยากรณ์สารสนเทศ",
-        thumbnailUrl: "/images/knowledge04.png",
-        linkUrl: "http://kmcenter.rid.go.th/kchydhome/documents/2553/manual/manning_s_formula.pdf",
+        thumbnailUrl: "/knowledge/knowledge04.png",
+        linkUrl: "/knowledge/manning_s_formula.pdf",
     },
     {
         id: 5,
         title: "คู่มือการกรอก Coding form",
         date: "25 พ.ค. 2010",
         department: "กลุ่มงานสารสนเทศและมาตรวิทยา",
-        thumbnailUrl: "/images/knowledge05.png",
-        linkUrl: "http://kmcenter.rid.go.th/kchydhome/documents/2553/manual/c-form.pdf",
+        thumbnailUrl: "/knowledge/knowledge05.png",
+        linkUrl: "/knowledge/c-form.pdf",
     },
     {
         id: 6,
         title: "คู่มือการใช้โปรแกรม Basin และ Station Unit Hydrograph",
         date: "1 ม.ค. 2011",
         department: "ดร.ทองเปลว กองจันทร์",
-        thumbnailUrl: "/images/knowledge06.png",
-        linkUrl: "",
+        thumbnailUrl: "/knowledge/Basin_page-0001.jpg",
+        linkUrl: "/knowledge/Basin.pdf",
     },
     {
         id: 7,
         title: "ลำดับความสำคัญของงานปรับปรุง",
         date: "1 ม.ค. 1970",
         department: "-",
-        thumbnailUrl: "/images/knowledge07.png",
-        linkUrl: "http://kmcenter.rid.go.th/kchydhome/documents/2555/Manual/Imp_Management01.pdf",
+        thumbnailUrl: "/knowledge/knowledge07.png",
+        linkUrl: "/knowledge/Imp_Management01.pdf",
     },
     {
         id: 8,
         title: "รายงานการศึกษาปรับปรุงเกณฑ์ปฏิบัติการอ่างเก็บน้ำ",
         date: "1 ก.ย. 2012",
         department: "ส่วนบริหารจัดการน้ำ",
-        thumbnailUrl: "/images/knowledge08.png",
-        linkUrl: "http://kmcenter.rid.go.th/kchydhome/documents/2556/Manual/Learning_Center_for_Agriculture.pdf",
+        thumbnailUrl: "/knowledge/knowledge08.png",
+        linkUrl: "/knowledge/Learning_Center_for_Agriculture.pdf",
     },
     {
         id: 9,
         title: "รายงานการปรับปรุงระบบพยากรณ์น้ำท่า",
         date: "1 ก.ย. 2012",
         department: "ส่วนบริหารจัดการน้ำ",
-        thumbnailUrl: "/images/knowledge09.png",
-        linkUrl: "http://kmcenter.rid.go.th/kchydhome/documents/2555/Manual/Streamflow%20forecasting.pdf",
+        thumbnailUrl: "/knowledge/knowledge09.png",
+        linkUrl: "/knowledge/Streamflow forecasting.pdf",
     },
     {
         id: 10,
         title: "การเฝ้าระวังภัยน้ำท่วมเมืองพัทลุง",
         date: "18 ก.ค. 2014",
         department: "ศูนย์อุทกวิทยาภาคใต้",
-        thumbnailUrl: "/images/knowledge10.png",
-        linkUrl: "http://kmcenter.rid.go.th/kchydhome/documents/2557/manual/phatthalung_57.pdf",
+        thumbnailUrl: "/knowledge/knowledge10.png",
+        linkUrl: "/knowledge/phatthalung_57.pdf",
     },
     {
         id: 11,
         title: "การวิเคราะห์ความเสี่ยงของเขื่อนและอาคารประกอบ",
         date: "23 ก.ย. 2014",
         department: "คณะจัดทำคู่มือความเสี่ยงของเขื่อน",
-        thumbnailUrl: "/images/knowledge11.png",
-        linkUrl: "http://kmcenter.rid.go.th/kchydhome/documents/2557/manual/mannual02.pdf",
+        thumbnailUrl: "/knowledge/knowledge11.png",
+        linkUrl: "/knowledge/mannual02.pdf",
     },
 ];
 

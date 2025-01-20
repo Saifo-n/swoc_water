@@ -55,7 +55,7 @@ const DivisionPage = () => {
             <a href="https://www.tmd.go.th/daily_forecast.php" target="_blank" rel="noopener noreferrer">
               <div className="relative">
                 <img
-                  src="https://www.prachachat.net/wp-content/uploads/2023/01/%E0%B8%AD%E0%B8%B2%E0%B8%81%E0%B8%B2%E0%B8%A8%E0%B8%AB%E0%B8%99%E0%B8%B2%E0%B8%A7%E0%B9%80%E0%B8%A2%E0%B9%87%E0%B8%99-%E0%B8%97%E0%B8%B0%E0%B9%80%E0%B8%A5%E0%B8%AB%E0%B8%A1%E0%B8%AD%E0%B8%81-728x546.jpg"
+                  src="https://today-obs.line-scdn.net/0hioQfZ1zyNkBsHyaapFFJF1RJOjFfeSxJTnp9LkAcO3MVM3cWWH5lIxsabmwSeiZBTHt7Ih0eanNDfSJDUA/w644"
                   alt="พยากรณ์อากาศ"
                   className="h-48 w-full object-cover"
                 />
@@ -76,7 +76,7 @@ const DivisionPage = () => {
             <a href="https://www.tmd.go.th/supportData/synopticCharts" target="_blank" rel="noopener noreferrer">
               <div className="relative">
                 <img
-                  src="https://www.expedia.co.th/stories/wp-content/uploads/2022/07/01-Amur-River-2.jpg"
+                  src="https://static.trueplookpanya.com/cmsblog/473/60473/banner_file.jpg"
                   alt="แผนที่อากาศ"
                   className="h-48 w-full object-cover"
                 />
@@ -95,7 +95,7 @@ const DivisionPage = () => {
             <a href="https://satda.tmd.go.th/" target="_blank" rel="noopener noreferrer">
               <div className="relative">
                 <img
-                  src="https://static.thairath.co.th/media/dFQROr7oWzulq5Fa4vAvCoFOlET5xOTj4ZTj67bURmgBWgMgPORNvqj7N0QEhqFMBLl.webp"
+                  src="https://satda.tmd.go.th/wp-content/uploads/data/20250117/202501171000_sat.jpg"
                   alt="Satellite Image Analysis"
                   className="h-48 w-full object-cover"
                 />
@@ -343,13 +343,13 @@ const DivisionPage = () => {
             <a href="https://hyd-app.rid.go.th/hydro1h.html" target="_blank" rel="noopener noreferrer">
               <div className="relative">
                 <img
-                  src="https://static.thairath.co.th/media/Dtbezn3nNUxytg04avc77il9608p5YVzTLj7j4IIzpfFTI.webp"
-                  alt="ระดับน้ำรายชั่วโมงภาคเหนือตอนบน (เชียงใหม่)"
+                  src="https://static.naewna.com/uploads/news/source/760225.jpg"
+                  alt="ระดับน้ำรายชั่วโมงภาคเหนือตอนบน"
                   className="h-48 w-full object-cover"
                 />
                 <div className="absolute inset-0 bg-black/50 flex justify-center items-center text-white">
                   <h3 className="text-lg font-semibold text-center" style={{ fontSize: `${fontSize}px` }}>
-                    {language === "ไทย" ? "ระดับน้ำรายชั่วโมงภาคเหนือตอนบน (เชียงใหม่)" : "Hourly Water Level in Upper Northern Region (Chiang Mai)"}
+                    {language === "ไทย" ? "ระดับน้ำรายชั่วโมงภาคเหนือตอนบน" : "Hourly Water Level in Upper Northern Region"}
                   </h3>
                 </div>
               </div>
@@ -362,13 +362,13 @@ const DivisionPage = () => {
             <a href="https://hyd-app.rid.go.th/hydro2h.html" target="_blank" rel="noopener noreferrer">
               <div className="relative">
                 <img
-                  src="https://mpics.mgronline.com/pics/Images/567000010638805.JPEG"
-                  alt="ระดับน้ำรายชั่วโมงภาคเหนือตอนล่าง (พิษณุโลก)"
+                  src="https://cbtthailand.dasta.or.th/upload-file-api/Resources/RelateAttraction/Images/RAT630024/1.jpeg"
+                  alt="ระดับน้ำรายชั่วโมงภาคเหนือตอนล่าง"
                   className="h-48 w-full object-cover"
                 />
                 <div className="absolute inset-0 bg-black/50 flex justify-center items-center text-white">
                   <h3 className="text-lg font-semibold text-center" style={{ fontSize: `${fontSize}px` }}>
-                    {language === "ไทย" ? "ระดับน้ำรายชั่วโมงภาคเหนือตอนล่าง (พิษณุโลก)" : "Hourly Water Level in Lower Northern Region (Phitsanulok)"}
+                    {language === "ไทย" ? "ระดับน้ำรายชั่วโมงภาคเหนือตอนล่าง" : "Hourly Water Level in Lower Northern Region"}
                   </h3>
                 </div>
               </div>
@@ -381,13 +381,13 @@ const DivisionPage = () => {
             <a href="https://hyd-app.rid.go.th/hydro3h.html" target="_blank" rel="noopener noreferrer">
               <div className="relative">
                 <img
-                  src="https://media-cdn.tripadvisor.com/media/photo-c/1280x250/09/7b/11/d8/15-10-07-15-42-22-928.jpg"
-                  alt="ระดับน้ำรายชั่วโมงภาคตะวันออกเฉียงเหนือตอนบน (ขอนแก่น)"
+                  src="https://www.prachachat.net/wp-content/uploads/2023/10/DJI_0012-728x409.jpg"
+                  alt="ระดับน้ำรายชั่วโมงภาคตะวันออกเฉียงเหนือตอนบน"
                   className="h-48 w-full object-cover"
                 />
                 <div className="absolute inset-0 bg-black/50 flex justify-center items-center text-white">
                   <h3 className="text-lg font-semibold text-center" style={{ fontSize: `${fontSize}px` }}>
-                    {language === "ไทย" ? "ระดับน้ำรายชั่วโมงภาคตะวันออกเฉียงเหนือตอนบน (ขอนแก่น)" : "Hourly Water Level in Upper Northeastern Region (Khon Kaen)"}
+                    {language === "ไทย" ? "ระดับน้ำรายชั่วโมงภาคตะวันออกเฉียงเหนือตอนบน" : "Hourly Water Level in Upper Northeastern Region"}
                   </h3>
                 </div>
               </div>
@@ -400,13 +400,13 @@ const DivisionPage = () => {
             <a href="https://hyd-app.rid.go.th/hydro4h.html" target="_blank" rel="noopener noreferrer">
               <div className="relative">
                 <img
-                  src="https://www.khaosod.co.th/wpapp/uploads/2021/10/%E0%B8%A1%E0%B8%A5%E0%B8%9A%E0%B8%994-25.jpg"
-                  alt="ระดับน้ำรายชั่วโมงภาคตะวันออกเฉียงเหนือตอนล่าง (นครราชสีมา)"
+                  src="https://theisaanrecord.co/wp-content/uploads/2023/10/lampao.jpeg"
+                  alt="ระดับน้ำรายชั่วโมงภาคตะวันออกเฉียงเหนือตอนล่าง"
                   className="h-48 w-full object-cover"
                 />
                 <div className="absolute inset-0 bg-black/50 flex justify-center items-center text-white">
                   <h3 className="text-lg font-semibold text-center" style={{ fontSize: `${fontSize}px` }}>
-                    {language === "ไทย" ? "ระดับน้ำรายชั่วโมงภาคตะวันออกเฉียงเหนือตอนล่าง (นครราชสีมา)" : "Hourly Water Level in Lower Northeastern Region (Nakhon Ratchasima)"}
+                    {language === "ไทย" ? "ระดับน้ำรายชั่วโมงภาคตะวันออกเฉียงเหนือตอนล่าง" : "Hourly Water Level in Lower Northeastern Region"}
                   </h3>
                 </div>
               </div>
@@ -419,13 +419,13 @@ const DivisionPage = () => {
             <a href="https://hyd-app.rid.go.th/hydro5h.html" target="_blank" rel="noopener noreferrer">
               <div className="relative">
                 <img
-                  src="https://www.prachachat.net/wp-content/uploads/2024/10/Cover-photo-6-728x485.jpg"
-                  alt="ระดับน้ำรายชั่วโมงภาคกลาง (ชัยนาท)"
+                  src="https://static.thairath.co.th/media/00_A5B858953C1E480.webp"
+                  alt="ระดับน้ำรายชั่วโมงภาคกลาง"
                   className="h-48 w-full object-cover"
                 />
                 <div className="absolute inset-0 bg-black/50 flex justify-center items-center text-white">
                   <h3 className="text-lg font-semibold text-center" style={{ fontSize: `${fontSize}px` }}>
-                    {language === "ไทย" ? "ระดับน้ำรายชั่วโมงภาคกลาง (ชัยนาท)" : "Hourly Water Level in Central Region (Chai Nat)"}
+                    {language === "ไทย" ? "ระดับน้ำรายชั่วโมงภาคกลาง" : "Hourly Water Level in Central Region"}
                   </h3>
                 </div>
               </div>
@@ -438,13 +438,13 @@ const DivisionPage = () => {
             <a href="https://hyd-app.rid.go.th/hydro6h.html" target="_blank" rel="noopener noreferrer">
               <div className="relative">
                 <img
-                  src="https://cdn2.mushroomtravel.com/files/MUSH/Uploads/Attraction/202008/Bang%20Phra%20Reservoir%2C%20Chonburi%20-%20Getty%20Images%20%286%29.jpg"
-                  alt="ระดับน้ำรายชั่วโมงภาคตะวันออก (ชลบุรี)"
+                  src="https://banparesort.com/wp-content/uploads/2019/01/04-1.jpg"
+                  alt="ระดับน้ำรายชั่วโมงภาคตะวันออก"
                   className="h-48 w-full object-cover"
                 />
                 <div className="absolute inset-0 bg-black/50 flex justify-center items-center text-white">
                   <h3 className="text-lg font-semibold text-center" style={{ fontSize: `${fontSize}px` }}>
-                    {language === "ไทย" ? "ระดับน้ำรายชั่วโมงภาคตะวันออก (ชลบุรี)" : "Hourly Water Level in the Eastern Region (Chonburi)"}
+                    {language === "ไทย" ? "ระดับน้ำรายชั่วโมงภาคตะวันออก" : "Hourly Water Level in the Eastern Region"}
                   </h3>
                 </div>
               </div>
@@ -457,13 +457,13 @@ const DivisionPage = () => {
             <a href="https://hyd-app.rid.go.th/hydro7h.html" target="_blank" rel="noopener noreferrer">
               <div className="relative">
                 <img
-                  src="https://www.riverkwairesotel.net/wp-content/uploads/2023/12/1-%E0%B8%A3%E0%B8%A7%E0%B8%A1%E0%B9%80%E0%B8%82%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%99%E0%B8%81%E0%B8%B2%E0%B8%8D%E0%B8%88%E0%B8%99%E0%B8%9A%E0%B8%B8%E0%B8%A3%E0%B8%B5%E0%B8%A7%E0%B8%B4%E0%B8%A7%E0%B8%94%E0%B8%B5-%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%A5%E0%B8%A1%E0%B8%AB%E0%B8%99%E0%B8%B2%E0%B8%A7%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%AA%E0%B8%B2%E0%B8%A2%E0%B8%AB%E0%B8%A1%E0%B8%AD%E0%B8%81.webp"
-                  alt="ระดับน้ำรายชั่วโมงภาคตะวันตก (กาญจนบุรี)"
+                  src="https://mpics.mgronline.com/pics/Images/566000002423601.JPEG"
+                  alt="ระดับน้ำรายชั่วโมงภาคตะวันตก"
                   className="h-48 w-full object-cover"
                 />
                 <div className="absolute inset-0 bg-black/50 flex justify-center items-center text-white">
                   <h3 className="text-lg font-semibold text-center" style={{ fontSize: `${fontSize}px` }}>
-                    {language === "ไทย" ? "ระดับน้ำรายชั่วโมงภาคตะวันตก (กาญจนบุรี)" : "Hourly Water Level in the Western Region (Kanchanaburi)"}
+                    {language === "ไทย" ? "ระดับน้ำรายชั่วโมงภาคตะวันตก" : "Hourly Water Level in the Western Region"}
                   </h3>
                 </div>
               </div>
@@ -476,32 +476,13 @@ const DivisionPage = () => {
             <a href="https://hyd-app.rid.go.th/hydro8h.html" target="_blank" rel="noopener noreferrer">
               <div className="relative">
                 <img
-                  src="https://phatthalungreview.com//pic/36/1.jpg"
-                  alt="ระดับน้ำรายชั่วโมงภาคใต้ (พัทลุง)"
+                  src="https://www.chieolanholiday.com/wp-content/uploads/2018/11/Rajjaprabha-Power-Plant-01.jpg"
+                  alt="ระดับน้ำรายชั่วโมงภาคใต้"
                   className="h-48 w-full object-cover"
                 />
                 <div className="absolute inset-0 bg-black/50 flex justify-center items-center text-white">
                   <h3 className="text-lg font-semibold text-center" style={{ fontSize: `${fontSize}px` }}>
-                    {language === "ไทย" ? "ระดับน้ำรายชั่วโมงภาคใต้ (พัทลุง)" : "Hourly Water Level in the Southern Region (Phatthalung)"}
-                  </h3>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div
-            className={`bg-white shadow-lg rounded-lg overflow-hidden ${isDarkMode ? "bg-gray-800" : "bg-white"}`}
-          >
-            <a href="http://ridcctv.com/CctvList.aspx#" target="_blank" rel="noopener noreferrer">
-              <div className="relative">
-                <img
-                  src="https://today-obs.line-scdn.net/0hzEYalumoJWpkGArGWp9aPV5OJgVXdDZpAC50aTh2e15BejE-WitrX0gaeVxJKGI0Ci5oC0AaPltPKWQ4CCxr/w644"
-                  alt="ระบบเฝ้าระวังระดับน้ำด้วยกล้องวงจร (CCTV) กรมชลประทาน"
-                  className="h-48 w-full object-cover"
-                />
-                <div className="absolute inset-0 bg-black/50 flex justify-center items-center text-white">
-                  <h3 className="text-lg font-semibold text-center" style={{ fontSize: `${fontSize}px` }}>
-                    {language === "ไทย" ? "ระบบเฝ้าระวังระดับน้ำด้วยกล้องวงจร (CCTV) กรมชลประทาน" : "Water Level Surveillance System with CCTV (Irrigation Department)"}
+                    {language === "ไทย" ? "ระดับน้ำรายชั่วโมงภาคใต้" : "Hourly Water Level in the Southern Region"}
                   </h3>
                 </div>
               </div>
@@ -533,7 +514,7 @@ const DivisionPage = () => {
             <a href="http://183.88.214.137:8000/#" target="_blank" rel="noopener noreferrer">
               <div className="relative">
                 <img
-                  src="https://www.bethailand.com/Picture/P03006628_1.jpeg"
+                  src="https://www.cityub.go.th/New2017/images/2016/intro/13838567_10206922420440297_367712712_o.jpg"
                   alt="ติดตามระดับน้ำจากกล้อง CCTV ในพื้นที่เทศบาลนครอุบลราชธานี"
                   className="h-48 w-full object-cover"
                 />
@@ -722,7 +703,7 @@ const DivisionPage = () => {
             <a href="https://water.rid.go.th/hwm/cropwater/Statistic/index.htm" target="_blank" rel="noopener noreferrer">
               <div className="relative">
                 <img
-                  src="https://static.thairath.co.th/media/dFQROr7oWzulq5FZYjmzwxmlKUaCrv575tgr6eJKyKtFfFfiyFdtpuS4Jn1HRCaJmiX.jpg"
+                  src="https://www.isranews.org/images/stories/community/imnone/December/farmer000.jpg"
                   alt="สภาพการเพาะปลูกพืช"
                   className="h-48 w-full object-cover"
                 />
@@ -760,7 +741,7 @@ const DivisionPage = () => {
             <a href="http://irw101.ldd.go.th/index.php/2017-05-23-02-00-40/2017-05-23-02-00-40" target="_blank" rel="noopener noreferrer">
               <div className="relative">
                 <img
-                  src="https://www.dailynews.co.th/wp-content/uploads/2022/09/306155576_5720552191321573_7616417200496110082_n-1.jpg"
+                  src="https://web.codi.or.th/wp-content/uploads/2022/10/1-4-768x529.jpg"
                   alt="พื้นที่น้ำท่วมซ้ำซาก"
                   className="h-48 w-full object-cover"
                 />
@@ -799,7 +780,7 @@ const DivisionPage = () => {
             <a href="https://www.thaiwater.net/report/yearly/history" target="_blank" rel="noopener noreferrer">
               <div className="relative">
                 <img
-                  src="https://s359.kapook.com/pagebuilder/c4ebed69-3913-47dd-ab67-26c0bbfcc983.jpg"
+                  src="https://img.pptvhd36.com/thumbor/2021/09/29/38f1d93c34.jpg"
                   alt="สถิติอุทกภัยที่ผ่านมา"
                   className="h-48 w-full object-cover"
                 />
@@ -849,49 +830,10 @@ const DivisionPage = () => {
               </div>
             </a>
           </div>
-
           <div
             className={`bg-white shadow-lg rounded-lg overflow-hidden ${isDarkMode ? "bg-gray-800" : "bg-white"}`}
           >
-            <a href="https://apps.apple.com/th/app/wmsc/id881559159" target="_blank" rel="noopener noreferrer">
-              <div className="relative">
-                <img
-                  src="/images/division.png"
-                  alt="แอปพลิเคชั่น WMSC (IOS)"
-                  className="h-48 w-full object-cover"
-                />
-                <div className="absolute inset-0 bg-black/50 flex justify-center items-center text-white">
-                  <h3 className="text-lg font-semibold text-center" style={{ fontSize: `${fontSize}px` }}>
-                    {language === "ไทย" ? "แอปพลิเคชั่น WMSC (IOS)" : "WMSC Application (IOS)"}
-                  </h3>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div
-            className={`bg-white shadow-lg rounded-lg overflow-hidden ${isDarkMode ? "bg-gray-800" : "bg-white"}`}
-          >
-            <a href="https://play.google.com/store/apps/details?id=io.cordova.wmsc.app.rid.go.th&hl=th&gl=US" target="_blank" rel="noopener noreferrer">
-              <div className="relative">
-                <img
-                  src="/images/division.png"
-                  alt="แอปพลิเคชั่น WMSC (android)"
-                  className="h-48 w-full object-cover"
-                />
-                <div className="absolute inset-0 bg-black/50 flex justify-center items-center text-white">
-                  <h3 className="text-lg font-semibold text-center" style={{ fontSize: `${fontSize}px` }}>
-                    {language === "ไทย" ? "แอปพลิเคชั่น WMSC (android)" : "WMSC Application (android)"}
-                  </h3>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div
-            className={`bg-white shadow-lg rounded-lg overflow-hidden ${isDarkMode ? "bg-gray-800" : "bg-white"}`}
-          >
-            <a href="https://play.google.com/store/apps/details?id=rid.swoc.swocpr" target="_blank" rel="noopener noreferrer">
+            <a href="https://apps.apple.com/cz/app/swoc-pr/id1546752648" target="_blank" rel="noopener noreferrer">
               <div className="relative">
                 <img
                   src="https://is1-ssl.mzstatic.com/image/thumb/Purple122/v4/40/ad/be/40adbe99-a8db-9bf7-80f8-5725bb641183/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/246x0w.webp"
@@ -910,7 +852,7 @@ const DivisionPage = () => {
           <div
             className={`bg-white shadow-lg rounded-lg overflow-hidden ${isDarkMode ? "bg-gray-800" : "bg-white"}`}
           >
-            <a href="https://www.tmd.go.th/supportData/synopticCharts" target="_blank" rel="noopener noreferrer">
+            <a href="https://play.google.com/store/apps/details?id=rid.swoc.swocpr" target="_blank" rel="noopener noreferrer">
               <div className="relative">
                 <img
                   src="https://is1-ssl.mzstatic.com/image/thumb/Purple122/v4/40/ad/be/40adbe99-a8db-9bf7-80f8-5725bb641183/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/246x0w.webp"

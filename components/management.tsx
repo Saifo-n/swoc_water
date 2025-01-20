@@ -81,7 +81,7 @@ const Management = () => {
             >
               <TransformComponent>
                 <img
-                  src="https://wmsw.rid.go.th/sbe/media/img_section/employee/chart.png"
+                  src="/images/chart.png"
                   alt={language === "ไทย" ? "โครงสร้างหน่วยงาน" : "Organization Structure"}
                   className="cursor-move"
                   style={{ width: "100%", height: "auto" }}

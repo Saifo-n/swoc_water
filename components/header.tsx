@@ -84,7 +84,7 @@ const Header: React.FC = () => {
       ],
     },
     { title: "คลังความรู้", url: "knowledge", th: "คลังความรู้", en: "Knowledge Repository" },
-    { title: "หนังสือเวียน สบอ.", url: "https://water.rid.go.th/hydhome/ma/book-hyd68.html", th: "หนังสือเวียน สบอ.", en: "Circulars" },
+    { title: "หนังสือเวียน สบอ.", url: "https://water.rid.go.th/hydhome/ma/book-hyd67.html", th: "หนังสือเวียน สบอ.", en: "Circulars" },
     {
       title: "หน่วยงานที่เกี่ยวข้อง",
       th: "หน่วยงานที่เกี่ยวข้อง",
@@ -95,7 +95,7 @@ const Header: React.FC = () => {
       ],
     },
     { title: "ติดต่อเรา", url: "contact", th: "ติดต่อเรา", en: "Contact Us" },
-    { title: "ข่าวสารและกิจกรรม", url: "https://www.facebook.com/Kromchon", th: "ข่าวสารและกิจกรรม", en: "News and Events" },
+    { title: "ข่าวสารและกิจกรรม", url: "news", th: "ข่าวสารและกิจกรรม", en: "News and Events" },
     { title: "ผังเว็บไซต์", url: "website", th: "ผังเว็บไซต์", en: "Sitemap" },
   ];
 
@@ -181,7 +181,7 @@ const Header: React.FC = () => {
           <div className="flex items-center font-bold">
             <img src="/images/logo.png" alt="Logo" width={40} height={40} />
             <span className={`ml-2 font-bold ${isDarkMode ? "text-white" : "text-blue-900"}`}>
-              ส่วนประมวลวิเคราะห์สถานการณ์น้ำ
+              {language === "ไทย" ? "ส่วนประมวลวิเคราะห์สถานการณ์น้ำ" : "Water Situation Analysis"}
             </span>
           </div>
 
@@ -193,24 +193,36 @@ const Header: React.FC = () => {
                 onMouseEnter={() => handleMouseEnter(index)}
                 onMouseLeave={handleMouseLeave}
               >
-                {item.url && item.url.startsWith("http") ? (
-                  <a
-                    href={item.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`nav-link font-bold${selectedIndex === index ? "text-gray-800" : (isDarkMode ? "text-gray-300" : "text-blue-900")} font-bold flex items-center transition-all duration-300 transform hover:text-gray-800 hover:scale-105`}
-                    style={{ fontSize: `${fontSize}px` }}
-                  >
-                    {language === "ไทย" ? item.th : item.en}
-                  </a>
+                {!item.dropdown ? (
+                  item.url && item.url.startsWith("http") ? (
+                    <a
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`nav-link font-bold ${selectedIndex === index ? "text-gray-800" : isDarkMode ? "text-gray-300" : "text-blue-900"
+                        } flex items-center transition-all duration-300 transform hover:text-gray-800 hover:scale-105`}
+                      style={{ fontSize: `${fontSize}px` }}
+                    >
+                      {language === "ไทย" ? item.th : item.en}
+                    </a>
+                  ) : (
+                    <Link
+                      href={item.url || "#"}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleNavigation(item.url || "#", index);
+                      }}
+                      className={`nav-link font-bold ${selectedIndex === index ? "text-gray-800" : isDarkMode ? "text-gray-300" : "text-blue-900"
+                        } flex items-center transition-all duration-300 transform hover:text-gray-800 hover:scale-105`}
+                      style={{ fontSize: `${fontSize}px` }}
+                    >
+                      {language === "ไทย" ? item.th : item.en}
+                    </Link>
+                  )
                 ) : (
-                  <Link
-                    href={item.url || "#"}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleNavigation(item.url || "#", index);
-                    }}
-                    className={`nav-link ${selectedIndex === index ? "text-gray-800" : (isDarkMode ? "text-gray-300" : "text-blue-900")} font-bold flex items-center transition-all duration-300 transform hover:text-gray-800 hover:scale-105`}
+                  <span
+                    className={`nav-link font-bold ${isDarkMode ? "text-gray-300 hover:text-gray-500" : "text-blue-900 hover:text-gray-800"
+                      } flex items-center transition-all duration-300 transform hover:scale-105`}
                     style={{ fontSize: `${fontSize}px` }}
                   >
                     {language === "ไทย" ? item.th : item.en}
@@ -219,16 +231,20 @@ const Header: React.FC = () => {
                         {openIndex === index ? "⮝" : "⮟"}
                       </span>
                     )}
-                  </Link>
+                  </span>
                 )}
 
                 {item.dropdown && openIndex === index && (
-                  <div className={`absolute left-0 shadow-lg p-2 mt-2 rounded-md z-10 w-80 font-bold ${isDarkMode ? "bg-gray-800 text-white" : "bg-white text-black"}`}>
+                  <div
+                    className={`absolute left-0 shadow-lg p-2 mt-2 rounded-md z-10 w-80 font-bold ${isDarkMode ? "bg-gray-800 text-white" : "bg-white text-black"
+                      }`}
+                  >
                     {item.dropdown.map((dropdownItem, idx) => (
                       <Link
                         key={idx}
                         href={dropdownItem.url || "#"}
-                        className={`block px-4 py-2 text-sm font-bold ${isDarkMode ? "text-white" : "text-blue-900"} ${isDarkMode ? "hover:bg-black" : "hover:bg-gray-300"} transition-colors duration-200`}
+                        className={`block px-4 py-2 text-sm font-bold ${isDarkMode ? "text-white hover:bg-gray-700" : "text-blue-900 hover:bg-gray-200"
+                          }`}
                         onClick={(e) => {
                           e.preventDefault();
                           handleNavigation(dropdownItem.url || "#", index);
@@ -241,6 +257,7 @@ const Header: React.FC = () => {
                 )}
               </div>
             ))}
+
           </nav>
 
           <button
@@ -252,54 +269,54 @@ const Header: React.FC = () => {
         </div>
 
         {menuOpen && (
-  <nav className={`font-bold ${isDarkMode ? "bg-gray-800 text-white" : "bg-white text-blue-900"}`}>
-    {menuItems.map((item, index) => (
-      <div key={index} className="border-b">
-        <button
-          onClick={() => {
-            if (!item.dropdown) {
-              if (item.url === "https://water.rid.go.th/hydhome/ma/book-hyd68.html" || item.url === "https://www.facebook.com/Kromchon") {
-                window.open(item.url, "_blank");
-              } else {
-                handleNavigation(item.url || "#", index);
-              }
-              setMenuOpen(false);
-            } else {
-              toggleDropdown(index);
-            }
-          }}
-          className={`block w-full py-3 text-left px-4 font-medium font-bold ${isDarkMode ? "text-white" : "text-blue-900"}`}
-        >
-          {language === "ไทย" ? item.th : item.en}
-          {item.dropdown && (
-            <span className="ml-2">
-              {dropdownOpen === index ? "⮝" : "⮟"}
-            </span>
-          )}
-        </button>
+          <nav className={`font-bold ${isDarkMode ? "bg-gray-800 text-white" : "bg-white text-blue-900"}`}>
+            {menuItems.map((item, index) => (
+              <div key={index} className="border-b">
+                <button
+                  onClick={() => {
+                    if (!item.dropdown) {
+                      if (item.url === "https://water.rid.go.th/hydhome/ma/book-hyd68.html" || item.url === "https://www.facebook.com/Kromchon") {
+                        window.open(item.url, "_blank");
+                      } else {
+                        handleNavigation(item.url || "#", index);
+                      }
+                      setMenuOpen(false);
+                    } else {
+                      toggleDropdown(index);
+                    }
+                  }}
+                  className={`block w-full py-3 text-left px-4 font-medium font-bold ${isDarkMode ? "text-white" : "text-blue-900"}`}
+                >
+                  {language === "ไทย" ? item.th : item.en}
+                  {item.dropdown && (
+                    <span className="ml-2">
+                      {dropdownOpen === index ? "⮝" : "⮟"}
+                    </span>
+                  )}
+                </button>
 
-        {item.dropdown && dropdownOpen === index && (
-          <div className={`pl-8 font-bold ${isDarkMode ? "bg-gray-800 text-white" : "bg-white text-blue-900"}`}>
-            {item.dropdown.map((dropdownItem, idx) => (
-              <Link
-                key={idx}
-                href={dropdownItem.url || "#"}
-                className={`block px-4 py-2 text-sm font-bold ${isDarkMode ? "text-white hover:bg-gray-700" : "text-blue-900 hover:bg-gray-200"}`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavigation(dropdownItem.url || "#", index);
-                  setMenuOpen(false);
-                }}
-              >
-                {language === "ไทย" ? dropdownItem.th : dropdownItem.en}
-              </Link>
+                {item.dropdown && dropdownOpen === index && (
+                  <div className={`pl-8 font-bold ${isDarkMode ? "bg-gray-800 text-white" : "bg-white text-blue-900"}`}>
+                    {item.dropdown.map((dropdownItem, idx) => (
+                      <Link
+                        key={idx}
+                        href={dropdownItem.url || "#"}
+                        className={`block px-4 py-2 text-sm font-bold ${isDarkMode ? "text-white hover:bg-gray-700" : "text-blue-900 hover:bg-gray-200"}`}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          handleNavigation(dropdownItem.url || "#", index);
+                          setMenuOpen(false);
+                        }}
+                      >
+                        {language === "ไทย" ? dropdownItem.th : dropdownItem.en}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
             ))}
-          </div>
+          </nav>
         )}
-      </div>
-    ))}
-  </nav>
-)}
 
       </header>
     </div>

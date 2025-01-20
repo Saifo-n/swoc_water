@@ -16,6 +16,8 @@ const Strategic = dynamic(() => import('@/components/strategic'), { ssr: false }
 const Guarantee = dynamic(() => import('@/components/guarantee'), { ssr: false });
 const Internal = dynamic(() => import('@/components/internal'), { ssr: false });
 const External = dynamic(() => import('@/components/external'), { ssr: false });
+const News = dynamic(() => import('@/components/news'), { ssr: false });
+
 
 function MainContent() {
   const { currentPage } = usePage();
@@ -35,6 +37,7 @@ function MainContent() {
       {currentPage === 'guarantee' && <Guarantee />}
       {currentPage === 'internal' && <Internal />}
       {currentPage === 'external' && <External />}
+      {currentPage === 'news' && <News />}
     </main>
   );
 }

@@ -99,13 +99,13 @@ const Contact = () => {
                             {language === "ไทย" ? "ติดตามเรา" : "Follow Us"}
                         </h2>
                         <div className="flex space-x-4 mb-8">
-                            <a href="https://www.facebook.com/Kromchon" target="_blank" rel="noopener noreferrer">
+                            <a href="https://www.facebook.com/ridreport/?locale=th_TH" target="_blank" rel="noopener noreferrer">
                                 <img src="/images/facebook.png" alt="Facebook" className="w-8 h-8" />
                             </a>
                             <a href="https://www.youtube.com/channel/UCO-9E_WRW_YNaU-29thdhsg" target="_blank" rel="noopener noreferrer">
                                 <img src="/images/youtube.png" alt="YouTube" className="w-8 h-8" />
                             </a>
-                            <a href="https://page.line.me/gql5082z" target="_blank" rel="noopener noreferrer">
+                            <a href="https://linevoom.line.me/user/_dTuvy-vVDPy1MwEcM6P00N69EzaT-_ExFmgFUec?utm_medium=windows&utm_source=desktop&utm_campaign=OA_Profile" target="_blank" rel="noopener noreferrer">
                                 <img src="/images/line.png" alt="Line" className="w-8 h-8" />
                             </a>
                             <a href="https://x.com/pr_rid" target="_blank" rel="noopener noreferrer">

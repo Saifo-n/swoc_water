@@ -129,13 +129,13 @@ const Footer = () => {
             {language === "ไทย" ? "เครือข่ายสังคมออนไลน์" : "Social Media"}
           </h4>
           <div className="flex space-x-4">
-            <a href="https://www.facebook.com/Kromchon" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.facebook.com/ridreport/?locale=th_TH" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
               <img src="/images/facebook.png" alt="Facebook" className="w-10 h-10 object-contain" />
             </a>
             <a href="https://www.youtube.com/channel/UCO-9E_WRW_YNaU-29thdhsg" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
               <img src="/images/youtube.png" alt="YouTube" className="w-10 h-10 object-contain" />
             </a>
-            <a href="https://page.line.me/gql5082z" aria-label="Line" target="_blank" rel="noopener noreferrer">
+            <a href="https://linevoom.line.me/user/_dTuvy-vVDPy1MwEcM6P00N69EzaT-_ExFmgFUec?utm_medium=windows&utm_source=desktop&utm_campaign=OA_Profile" aria-label="Line" target="_blank" rel="noopener noreferrer">
               <img src="/images/line.png" alt="Line" className="w-10 h-10 object-contain" />
             </a>
             <a href="https://x.com/pr_rid" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
@@ -150,7 +150,7 @@ const Footer = () => {
 
       <div className="bg-[#143556] py-2 text-center">
         <p style={{ fontSize: `${fontSize}px` }}>
-          {language === "ไทย" ? "@ลิขสิทธิ์ 2024 กรมชลประทาน" : "@Copyright 2024 Irrigation Department"}
+          {language === "ไทย" ? "@ลิขสิทธิ์ 2025 กรมชลประทาน" : "@Copyright 2025 Irrigation Department"}
         </p>
       </div>
     </footer>
