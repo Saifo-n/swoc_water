@@ -36,7 +36,7 @@ const DivisionPage = () => {
             <a href="https://drive.google.com/file/d/1qLW0flli2XNiTP7uv4Y6bktP8R45i1oO/view?usp=sharing" target="_blank" rel="noopener noreferrer">
               <div className="relative">
                 <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Mun_River_-_Sisaket.jpg/1280px-Mun_River_-_Sisaket.jpg"
+                  src="https://scontent.fbkk19-1.fna.fbcdn.net/v/t39.30808-6/405130455_673215584928512_3308750642152697642_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeE2PBBf2bE3JvXqxeIqpF5rGtxsDmUbkxMa3GwOZRuTE7Go0kwYiVtK3rR1JNVR5cNQNEop6udej_4S_cosEo1A&_nc_ohc=fXOwDHZW3X8Q7kNvgGqCvm4&_nc_oc=AdjXoU7Eiiu9JONqHTiDpCHf1elftAZQbjWfzDVX0QS-duuJcFjEsOUb1yP8_1N7H48&_nc_zt=23&_nc_ht=scontent.fbkk19-1.fna&_nc_gid=AWw6l3rikF303nldy7ODKPR&oh=00_AYDnreipQlV3ybYj7aRr147r7zGSSUuN2TGJ1IAA08Bx0Q&oe=6793EF6A"
                   alt="แผนที่ สชป.1-17"
                   className="h-48 w-full object-cover"
                 />
